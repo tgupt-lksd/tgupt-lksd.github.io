@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Tracker</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #1f2937;
+        }
+
+        .container {
+            max-width: 520px;
+            margin: 24px auto;
+            padding: 16px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #2563eb;
+            color: #fff;
+            padding: 20px 18px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        form {
+            padding: 18px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        label {
+            font-size: 0.95rem;
+            font-weight: 700;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 10px;
+            font: inherit;
+        }
+
+        input {
+            border: 1px solid #d1d9e6;
+            background: #fff;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        button {
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .submit-btn {
+            background: #2563eb;
+            color: #fff;
+        }
+
+        .status {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            min-height: 20px;
+            color: #166534;
+            font-weight: 700;
+        }
+
+        .view-link {
+            display: inline-block;
+            margin-top: 14px;
+            text-align: center;
+            width: 100%;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 14px;
+            width: min(420px, 100%);
+            padding: 22px 20px 18px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+        }
+
+        .modal.success {
+            border-top: 6px solid #16a34a;
+        }
+
+        .modal.error {
+            border-top: 6px solid #dc2626;
+        }
+
+        .modal-title {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+        }
+
+        .modal-message {
+            margin: 0 0 18px;
+            color: #374151;
+            line-height: 1.5;
+        }
+
+        .modal-btn {
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: #fff;
+            padding: 11px 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                margin: 0;
+                padding: 12px;
+            }
+
+            .header {
+                padding: 18px 14px;
+            }
+
+            form {
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="header">
+                <h1>Inventory Details</h1>
+            </div>
+
+            <form id="inventoryForm" method="POST"
+                action="https://script.google.com/macros/s/AKfycbyYoSZXIYVCuVX3rhdoOAVFMwdVoVxuVQbJXZzDGNeCc_fBK9YXj9ZZse5Qgs7QyLYr-w/exec"
+                onsubmit="setTimeout(function(){window.location.reload();}, 100);">
+                <div class="field">
+                    <input id="item-name" name="Name" type="text" placeholder="Enter item name" required />
+                    <input id="qty" name="Quantity" type="number" min="0" placeholder="Qty" required />
+                    <input id="location" name="Location" type="text" value="Cabinet" required />
+                </div>
+
+                <button type="submit">Send</button>
+            </form>
+        </div>
+
+        <script>
+
+
+        </script>
+</body>
+
+</html>
+
+<!--
+
+              <div class="field">
+                    <label for="item-name">Item Name</label>
+                    <input id="item-name" name="itemName" type="text" placeholder="Enter item name" required />
+                </div>
+
+                <div class="field">
+                    <label for="qty">Quantity</label>
+                    <input id="qty" name="quantity" type="number" min="0" placeholder="0" required />
+                </div>
+
+                <div class="field">
+                    <label for="location">Location</label>
+                    <input id="location" name="location" type="text" placeholder="e.g. Shelf A-2" required />
+                </div>
+
+                <button class="submit-btn" type="submit">Save</button>
+
+-->
